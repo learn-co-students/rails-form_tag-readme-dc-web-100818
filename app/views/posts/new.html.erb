@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New Post</title>
+</head>
+<body>
+  <h3>Post Form</h3>
+  <%= form_tag posts_path do %>
+    
+    <label>Post Title:</label>
+    <%= text_field_tag :'post[title]' %>
+    <br>
+    
+    <label>Post Description:</label>
+     <%= text_area_tag :'post[description]' %><br>
+    <br>
+     
+     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="submit" value="Submit Post">
+  <% end %>
+
+  <%= params.inspect %>
+</body>
+</html>
